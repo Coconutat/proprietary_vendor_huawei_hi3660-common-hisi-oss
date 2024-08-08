@@ -140,4 +140,83 @@
             ignore_rom_alm="true"
             ignore_ram_alm="true"
             ignore_pos="true"
-            ig
+            ignore_nav="true"
+            ignore_time="true"
+        />
+        <req_ftest
+            BDSPRN="1"
+            Fcn="0"
+            PRN="1"
+            GL_FACT_TEST_MODE="GL_FACT_TEST_CONT"
+            GL_FACT_TEST_ITEMS="GL_FACT_TEST_CW"
+            avg_int_sec="10"
+            duration_sec="60"
+        />
+    </task>
+</job>
+<job id="Factory_Combo_CW_Test_GPS">
+    <task id="test" repeat="1">
+        <startup
+            ignore_osc="true"
+            ignore_rom_alm="true"
+            ignore_ram_alm="true"
+            ignore_pos="true"
+            ignore_nav="true"
+            ignore_time="true"
+        />
+        <req_ftest
+            PRN="1"
+            GL_FACT_TEST_MODE="GL_FACT_TEST_CONT"
+            GL_FACT_TEST_ITEMS="GL_FACT_TEST_CW"
+            avg_int_sec="10"
+            duration_sec="60"
+        />
+    </task>
+</job>
+<job id="Factory_Combo_CW_Test_BD">
+    <task id="test" repeat="1">
+        <startup
+            ignore_osc="true"
+            ignore_rom_alm="true"
+            ignore_ram_alm="true"
+            ignore_pos="true"
+            ignore_nav="true"
+            ignore_time="true"
+        />
+        <req_ftest
+            BDSPRN="1"
+            GL_FACT_TEST_MODE="GL_FACT_TEST_CONT"
+            GL_FACT_TEST_ITEMS="GL_FACT_TEST_CW"
+            avg_int_sec="10"
+            duration_sec="60"
+        />
+    </task>
+</job>
+<job id="Factory_Combo_CW_Test_GLO">
+    <task id="test" repeat="1">
+        <startup
+            ignore_osc="true"
+            ignore_rom_alm="true"
+            ignore_ram_alm="true"
+            ignore_pos="true"
+            ignore_nav="true"
+            ignore_time="true"
+        />
+        <req_ftest
+            Fcn="0"
+            GL_FACT_TEST_MODE="GL_FACT_TEST_CONT"
+            GL_FACT_TEST_ITEMS="GL_FACT_TEST_CW"
+            avg_int_sec="10"
+            duration_sec="60"
+        />
+    </task>
+</job>
+
+<job Id="batching">
+    <task>
+        <req_breadcrumb BreadCrumbPeriodS="10" BreadCrumbWakeUpOnFifoFull="true" BreadCrumbReportAllFixes="false" />
+    </task>
+</job>
+
+</glgps>
+

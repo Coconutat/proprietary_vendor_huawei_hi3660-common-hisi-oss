@@ -160,4 +160,44 @@ temps_hysteresis=15
 #SAR Control
 dynamicsarctrl_2g=0xc4b2
 dynamicsarctrl_5gb0=0xb4a2
-dynamicsarctrl_5gb1=0xb4a2
+dynamicsarctrl_5gb1=0xb4a2
+dynamicsarctrl_5gb2=0xb4a2
+dynamicsarctrl_5gb3=0xb4ae
+#Bandedge Power Control
+powoffs2gtna0=-4,-4,-2,-4,1,0,0,-4,-1,-4,2,-4,0,-4  
+powoffs2gtna1=-4,-4,-4,-4,-4,-4,-4,-4,-4,-4,-4,-4,-4,-4 
+powoffs5g20mtna0=4,4,4,4,4,4
+powoffs5g20mtna1=4,4,4,4,4,4
+powoffs5g40mtna0=4,4,4,4,4
+powoffs5g40mtna1=4,4,4,4,4
+powoffs5g80mtna0=4,4,4,4,4
+powoffs5g80mtna1=4,4,4,4,4
+
+rssicorrnorm_c0=4,4
+rssicorrnorm_c1=6,6
+rssicorrnorm5g_c0=4,4,4,3,3,3,2,2,2,3,3,3
+
+#4
+# RF filter设定（有可能需要微调，请咨询博通）
+cckdigfilttype=4
+#valid ofdm filter types are 0 and 1
+ofdmfilttype_2gbe=127
+ofdmfilttype_5gbe=127
+
+#5
+# WIFI/BT coex setting
+# BT coex setting
+btc_mode=1
+btcdyn_flags=0x0
+#btc_params82=0x1a0
+
+#6 GPIO setting,0x1 for UART enable, 0x2 for GPIOs, 0x8 for JTAG, 0x10 for HW OOB
+muxenab=0x01
+#device_wake_opt=1
+host_wake_opt=0
+#RSDB enable/disable
+rsdb_mode=0
+#5G MIMO enable/disable
+mimo5g_disable=1
+ap_use_antenna=0x11
+huawei_ant=1

@@ -184,9 +184,7 @@ PRODUCT_COPY_FILES += \
     vendor/huawei/hi3660-common/proprietary/vendor/firmware/nvram43455_hw_mha_TUGL_oversea.txt:$(TARGET_COPY_OUT_VENDOR)/firmware/nvram43455_hw_mha_TUGL_oversea.txt \
     vendor/huawei/hi3660-common/proprietary/vendor/firmware/nvram43455_hw_stf_TUGL.txt:$(TARGET_COPY_OUT_VENDOR)/firmware/nvram43455_hw_stf_TUGL.txt \
     vendor/huawei/hi3660-common/proprietary/vendor/firmware/nvram43455_hw_stf_oversea.txt:$(TARGET_COPY_OUT_VENDOR)/firmware/nvram43455_hw_stf_oversea.txt \
-    vendor/huawei/hi3660-common/proprietary/vendor/firmware/nvram43455_hw_vn1.txt:$(TARGET_COPY_OUT_VENDOR)/firmware/nvram43455_hw_vn1.txt \
     vendor/huawei/hi3660-common/proprietary/vendor/firmware/nvram4359_hw.txt:$(TARGET_COPY_OUT_VENDOR)/firmware/nvram4359_hw.txt \
-    vendor/huawei/hi3660-common/proprietary/vendor/firmware/nvram4359_hw_2ant_kepler.txt:$(TARGET_COPY_OUT_VENDOR)/firmware/nvram4359_hw_2ant_kepler.txt \
     vendor/huawei/hi3660-common/proprietary/vendor/firmware/nvram4359_hw_vicky_v1.txt:$(TARGET_COPY_OUT_VENDOR)/firmware/nvram4359_hw_vicky_v1.txt \
     vendor/huawei/hi3660-common/proprietary/vendor/firmware/nvram4359_hw_vicky_v3.txt:$(TARGET_COPY_OUT_VENDOR)/firmware/nvram4359_hw_vicky_v3.txt \
     vendor/huawei/hi3660-common/proprietary/vendor/firmware/nvram4359_hw_vicky_v3_oversea.txt:$(TARGET_COPY_OUT_VENDOR)/firmware/nvram4359_hw_vicky_v3_oversea.txt \

@@ -150,4 +150,57 @@ sb20in80and160lr5glpo=0x0
 sb40and80lr5glpo=0x0
 sb20in80and160lr5gmpo=0x0
 sb40and80lr5gmpo=0x0
-sb20in80and160l
+sb20in80and160lr5ghpo=0x0
+sb40and80lr5ghpo=0x0
+dot11agduphrpo=0x0
+dot11agduplrpo=0x0
+phycal_tempdelta=255
+temps_period=15
+temps_hysteresis=15
+#ltecxmux=0
+#ltecxpadnum=0x0908
+#ltecxfnsel=0x44
+#ltecxgcigpio=0x43
+#SAR Control
+dynamicsarctrl_2g=0xc4cc
+dynamicsarctrl_5gb0=0xb4c4
+dynamicsarctrl_5gb1=0xb4c4
+dynamicsarctrl_5gb2=0xb4c4
+dynamicsarctrl_5gb3=0xb4c4
+#Bandedge Power Control
+powoffs2gtna0=0,0,0,0,0,0,0,0,0,0,3,3,3,0  
+powoffs2gtna1=0,0,0,0,0,0,0,0,0,0,0,0,0,0  
+powoffs5g20mtna0=0,0,0,0,0,0
+powoffs5g20mtna1=0,0,0,0,0,0
+powoffs5g40mtna0=0,0,0,0,0
+powoffs5g40mtna1=0,0,0,0,0
+powoffs5g80mtna0=0,0,0,0,0
+powoffs5g80mtna1=0,0,0,0,0
+
+rssicorrnorm_c0=4,4
+rssicorrnorm_c1=6,6
+rssicorrnorm5g_c0=4,4,4,3,3,3,2,2,2,4,4,4
+rssicorrnorm5g_c1=8,8,8,8,8,8,8,8,8,8,8,8
+
+#4
+# RF filter设定（有可能需要微调，请咨询博通）
+cckdigfilttype=4
+#valid ofdm filter types are 0 and 1
+ofdmfilttype_2gbe=127
+ofdmfilttype_5gbe=127
+
+#5
+# WIFI/BT coex setting
+# BT coex setting
+btc_mode=1
+btcdyn_flags=0x0
+#btc_params82=0x1a0
+
+#6 GPIO setting,0x1 for UART enable, 0x2 for GPIOs, 0x8 for JTAG, 0x10 for HW OOB
+muxenab=0x01
+#device_wake_opt=1
+host_wake_opt=0
+core1_5gonly=1
+go5g_vsdb=1
+ap_use_antenna=0x31
+huawei_ant=1
