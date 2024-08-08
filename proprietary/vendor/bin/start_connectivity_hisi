@@ -1,0 +1,141 @@
+#!/vendor/bin/sh
+ini_ln_file="/data/vendor/cust_conn/ini_cfg"
+function create_ln_file()
+{
+    print_kernel_message "check file:$1"
+    if [ -f "$1" ];then
+        ln -sf  $1 $ini_ln_file
+        if [ $? -ne 0 ];then
+            print_kernel_message "ini create ln file fail:$1---$ini_ln_file"
+        else
+            print_kernel_message "ini create ln file succ:$1---$ini_ln_file"
+            return 0;
+        fi
+    fi
+    return -1;
+}
+
+function cfg_ini_path_ini()
+{
+    print_kernel_message "process cfg_ini_path_ini"
+    str="$CUST_POLICY_DIRS"
+    print_kernel_message "env CUST_POLICY_DIRS=$CUST_POLICY_DIRS"
+    OLD_IFS="$IFS" 
+    IFS=":"
+    arr=($str) 
+    IFS="$OLD_IFS"
+    num=${#arr[@]}
+    file_suffix=$(cat /proc/device-tree/hisi_cust_cfg/ini_file_name)
+    print_kernel_message "ini_file_suffix:$file_suffix"
+    while [ $num -ne 0 ];do
+        cfg_dir="${arr[$num-1]}$file_suffix"
+        create_ln_file $cfg_dir
+        if [ $? -eq 0 ];then
+            return 0;
+        fi
+        let num-=1
+    done
+
+    ##default path
+    create_ln_file	$file_suffix
+    if [ $? -eq 0 ];then
+        return 0;
+    fi
+    return -1;
+}
+function chmod_retry()
+{
+    hisi_file=$1
+    hisi_file_user=$2
+    hisi_file_group=$3
+    ret_value=1
+    chmod_try=5
+    base_name=${hisi_file##*/}
+
+    #print_kernel_message "plat base_name is ${base_name}"
+
+    while [ $chmod_try -gt 0 ];do
+        if [ -e ${hisi_file} ]
+        then
+            chmod 660 ${hisi_file}
+            if [ $? -eq 0 ]
+            then
+                print_kernel_message "plat chmod ${hisi_file} succ"
+            else
+                print_kernel_message "plat chmod ${hisi_file} failed"
+                let chmod_try--
+                continue
+            fi
+
+            chown ${hisi_file_user}:${hisi_file_group} ${hisi_file}
+            if [ $? -eq 0 ]
+            then
+                print_kernel_message "plat chown ${hisi_file} succ"
+                print_kernel_message "plat `ls -l ${hisi_file}`"
+                let ret_value=0
+                break
+            else
+                print_kernel_message "plat chown ${hisi_file} failed"
+            fi
+            let chmod_try--
+        else
+            cat /proc/misc | grep ${base_name}
+            if [ $? -eq 0 ]
+            then
+                print_kernel_message "plat ${base_name} exist in /proc/misc, sleep wait 1s [$chmod_try]"
+                sleep 1
+                let chmod_try--
+                continue
+            else
+                print_kernel_message "plat ${base_name} not exist in /proc/misc, ignore"
+                break
+            fi
+        fi
+    done
+
+    return ret_value
+}
+
+function mk_default_dirs()
+{
+    umask 002
+
+    chmod_retry /dev/hwfm system system
+    chmod_retry /dev/hwgnss system system
+    chmod_retry /dev/hwbt bluetooth net_bt_stack
+    if [ $? -ne 0 ]
+    then
+        chmod_retry /dev/hwbt bluetooth bluetooth
+    fi
+    chmod_retry /dev/hwnfc nfc nfc
+    chmod_retry /dev/hwir system system
+
+    chmod_retry /sys/hi110x_ps/gnss_lowpower_state system system
+    chmod_retry /sys/hi110x_ps/ir_ctrl system system
+    chmod_retry /sys/hisys/hipriv system system
+    mkdir -p /data/gnss/pgps/chip
+    mkdir -p /data/log/gps/pgps/chip
+    chown system:system /data/gnss
+    chown system:system /data/gnss/pgps
+    chown system:system /data/gnss/pgps/chip
+    chown system:system /data/log/gps
+    chown system:system /data/log/gps/pgps
+    chown system:system /data/log/gps/pgps/chip
+    mkdir -p /data/hwlogdir/gnss_log/device/
+    mkdir -p /data/log/gps/device
+    chown system:system /data/hwlogdir
+    mkdir -p /data/hwlogdir/gnss_log/eph_alm
+    mkdir -p /data/log/gps/eph_alm
+    chown system:system /data/hwlogdir/gnss_log/eph_alm
+    chown system:system /data/log/gps/eph_alm
+    mkdir -p /data/hwlogdir/uart_rx
+    chown system:system /data/hwlogdir/uart_rx
+
+    chmod 640 /dev/hwbfgdbg
+    chown root:system /dev/hwbfgdbg
+    chmod 660 /dev/chrKmsgPlat
+    chown system:system /dev/chrKmsgPlat
+
+    mkdir -p /data/hwlogdir/wifi_log
+    mkdir -p /data/hwlogdir/wifi_log/dump
+    mkdir -p /data/hwlogd

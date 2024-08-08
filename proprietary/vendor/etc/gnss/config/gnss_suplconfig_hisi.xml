@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--if any child have more than one value it will come as a subchild of that
+        element e.g. <baudrate> <subbaud1>144</subbaud1> <subbaud2>156</subbaud2>
+        </baudrate> -->
+<!-- The node below is used to configure the entire SUPL stack to either
+        1 or 2 -->
+<supl>
+  <suplver>2</suplver>
+  <config_start name="SUPL1"
+                version="1.0">
+    <!--Version of SUPL protocol for which this configuration file works -->
+    <!--All configuration parameters pertaining to SUPL 1.0 is specified in
+                        this section -->
+    <!--version -->
+    <version>
+      <major>1</major>
+      <minor>0</minor>
+      <srvind>0</srvind>
+    </version>
+    <!--Logger details -->
+    <logparam>
+      <!--FileName -->
+      <filename>abs.log</filename>
+      <directtofile>0</directtofile>
+      <directtologcat>0</directtologcat>
+      <debugzone>FCFFEEFF</debugzone>
+      <debuglevel>FFFFFFFF</debuglevel>
+    </logparam>
+    <!--Capabilities of the SET pertaining to position technology, position
+                        protocol etc. -->
+    <setcapability>
+      <!--Specifies the mode of SLP supported by the SET -->
+      <slpmode>
+        <proxysupp>1</proxysupp>
+        <nonproxysupp>0</nonproxysupp>
+      </slpmode>
+      <!--Specifies the position technologies supported by SET -->
+      <postech>
+        <!--represented by set of bool -->
+        <agps_msa>1</agps_msa>
+        <agps_msb>1</agps_msb>
+        <autogps>1</autogps>
+        <aFLT>0</aFLT>
+        <ecid>0</ecid>
+        <eotd>0</eotd>
+        <otdoa>0</otdoa>
+      </postech>
+      <!--Specifies the position protocols supported by SET -->
+      <posprotocol>
+        <!--represented by set of bool -->
+        <tia_801>0</tia_801>
+        <rrc>1</rrc>
+        <rrlp>1</rrlp>
+      </posprotocol>
+      <!--Describes the preferred position technology. For pref postech use
+                                the tags (agps_msa or agps_msb) in section postech -->
+      <pref_postech>agps_msb</pref_postech>
+       <!--Support parameters for Bearer Networks -->
+      <bearer_network_enable>1</bearer_network_enable>
+      <!-- The numbers specify the priority among the bearer network. Lower the
+           number, higher is the priority. If two have the same nos, then their
+           priority is the same. If the value is zero, then it is of lower
+           priority. -->
+      <bearer_network_support roaming="1">
+        <wcdma>1</wcdma>
+        <cdma>0</cdma>
+        <gsm>1</gsm>
+        <lte>0</lte>
+        <umb>0</umb>
+        <wimax>0</wimax>
+        <wlan>1</wlan>
+        <hrpd>0</hrpd>
+      </bearer_network_support>
+        <bearer_network_support roaming="0">
+        <wcdma>1</wcdma>
+        <cdma>0</cdma>
+        <gsm>1</gsm>
+        <lte>0</lte>
+        <umb>0</umb>
+        <wimax>0</wimax>
+        <wlan>1</wlan>
+        <hrpd>0</hrpd>
+      </bearer_network_support>
+    </setcapability>
+    <!--SUPL protocol engine parameters -->
+    <supl_protocol_engine>
+      <!--Default QOP Params -->
+      <defqop>
+        <!--Horizontal accuracy -->
+        <horizontalaccuracy>30</horizontalaccuracy>
+        <!--Vertical accuracy -->
+        <verticalaccuracy>20</verticalaccuracy>
+        <!--Delay -->
+        <delay>7</delay>
+        <!--Max location Age -->
+        <maxlocationage>0</maxlocationage>
+      </defqop>
+      <!--Count to indicate the number of times assistance can be re-requested -->
+      <rereqasstcnt>2</rereqasstcnt>
+      <!--Injection control word - Specifies the types of assistance messages
+                                that have to be downloaded to the GPS chipset -->
+      <asstcontrol_msa>
+        <ref_loc>0</ref_loc>
+        <ref_time>1</ref_time>
+        <dgps>0</dgps>
+        <navmodel>0</navmodel>
+        <ionomodel>0</ionomodel>
+        <utcmodel>0</utcmodel>
+        <almanac>0</almanac>
+        <acquist>1</acquist>
+        <rti>0</rti>
+      </asstcontrol_msa>
+      <asstcontrol_msb>
+        <ref_loc>1</ref_loc>
+        <ref_time>1</ref_time>
+        <dgps>0</dgps>
+        <navmodel>1
