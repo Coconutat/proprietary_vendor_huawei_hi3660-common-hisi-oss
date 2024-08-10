@@ -271,6 +271,7 @@ PRODUCT_COPY_FILES += \
     vendor/huawei/hi3660-common/proprietary/vendor/lib64/displayeffect.hi3660.so:$(TARGET_COPY_OUT_VENDOR)/lib64/displayeffect.hi3660.so \
     vendor/huawei/hi3660-common/proprietary/vendor/lib64/egl/libGLES_mali.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLES_mali.so \
     vendor/huawei/hi3660-common/proprietary/vendor/lib64/ese_hw_hal.so:$(TARGET_COPY_OUT_VENDOR)/lib64/ese_hw_hal.so \
+    vendor/huawei/hi3660-common/proprietary/vendor/lib64/hw/android.hardware.camera.provider@2.4-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/android.hardware.camera.provider@2.4-impl.so \
     vendor/huawei/hi3660-common/proprietary/vendor/lib64/hw/android.hardware.keymaster@3.0-impl-hisi.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/android.hardware.keymaster@3.0-impl-hisi.so \
     vendor/huawei/hi3660-common/proprietary/vendor/lib64/hw/audio.primary_hisi.hi3660.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/audio.primary_hisi.hi3660.so \
     vendor/huawei/hi3660-common/proprietary/vendor/lib64/hw/fingerprint.hi3660.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/fingerprint.hi3660.so \
@@ -422,6 +423,7 @@ PRODUCT_COPY_FILES += \
     vendor/huawei/hi3660-common/proprietary/vendor/lib64/vendor.huawei.hardware.camera.camResource@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.huawei.hardware.camera.camResource@1.1.so \
     vendor/huawei/hi3660-common/proprietary/vendor/lib64/vendor.huawei.hardware.camera.camResource@1.2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.huawei.hardware.camera.camResource@1.2.so \
     vendor/huawei/hi3660-common/proprietary/vendor/lib64/vendor.huawei.hardware.camera.camResource@1.3.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.huawei.hardware.camera.camResource@1.3.so \
+    vendor/huawei/hi3660-common/proprietary/vendor/lib64/vendor.huawei.hardware.camera.cfgsvr@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.huawei.hardware.camera.cfgsvr@1.1.so \
     vendor/huawei/hi3660-common/proprietary/vendor/lib64/vendor.huawei.hardware.gnss@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.huawei.hardware.gnss@1.0.so \
     vendor/huawei/hi3660-common/proprietary/vendor/lib64/vendor.huawei.hardware.gnss@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.huawei.hardware.gnss@1.1.so \
     vendor/huawei/hi3660-common/proprietary/vendor/lib64/vendor.huawei.hardware.gnss@1.2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.huawei.hardware.gnss@1.2.so \
@@ -440,6 +442,7 @@ PRODUCT_COPY_FILES += \
     vendor/huawei/hi3660-common/proprietary/vendor/lib64/vendor.huawei.hardware.hwdisplay.displayengine@1.2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.huawei.hardware.hwdisplay.displayengine@1.2.so \
     vendor/huawei/hi3660-common/proprietary/vendor/lib64/vendor.huawei.hardware.hwdisplay.displayfactory@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.huawei.hardware.hwdisplay.displayfactory@1.0.so \
     vendor/huawei/hi3660-common/proprietary/vendor/lib64/vendor.huawei.hardware.hwdisplay@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.huawei.hardware.hwdisplay@1.0.so \
+    vendor/huawei/hi3660-common/proprietary/vendor/lib64/vendor.huawei.hardware.hwfactoryinterface@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.huawei.hardware.hwfactoryinterface@1.1.so \
     vendor/huawei/hi3660-common/proprietary/vendor/lib64/vendor.huawei.hardware.radio.chr@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.huawei.hardware.radio.chr@1.0.so \
     vendor/huawei/hi3660-common/proprietary/vendor/lib64/vendor.huawei.hardware.radio.deprecated@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.huawei.hardware.radio.deprecated@1.0.so \
     vendor/huawei/hi3660-common/proprietary/vendor/lib64/vendor.huawei.hardware.radio.ims@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.huawei.hardware.radio.ims@1.0.so \
